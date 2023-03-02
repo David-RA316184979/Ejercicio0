@@ -1,18 +1,16 @@
 import fileinput
 
-#Suncion de suma
-def suma(*numeros):
-    total = 0
-    for numero in numeros:
-        total += numero
-    return total
 
-def main():
-    #Para leer el archivo
-    numeros = []
-    for line in fileinput.input():
-        numeros.append(line)
-    suma(numeros)
+lines = []
+for line in fileinput.input():
+    lines.append(line)
+suma = 0
+for num in lines:
+    suma+= float(num)
+
+if suma.is_integer():
+    print(int(suma))
+else:
     print(suma)
 
 #lol
